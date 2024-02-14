@@ -9,13 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 40){
+            VStack(spacing: 20){
+                Text("Testando QUiz Aquui")
+                    .accentColorTitle()
+                
+                Text("Insira seu nome abaixo para começar")
+                
+            //Inserir caixa de texto para username
+            }
+            
+            MainButton(text: "Começar aqui")
+            
         }
-        .padding()
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+        .ignoresSafeArea(.all)
+        .background(Color(.gray))
     }
 }
 
