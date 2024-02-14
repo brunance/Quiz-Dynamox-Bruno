@@ -22,11 +22,19 @@ struct QuestionsView: View {
             ProgressBar(progress: 260)
             
             VStack (alignment: .leading, spacing: 20) {
-                Text("pergunta importante aqui, omg??")
+                Text("respostinha aqui")
                     .font(.system(size: 20))
                     .bold()
                     .foregroundStyle(.white)
+                
+                AnswerRow(answer: Answer(text: "false", isAnswerCorrect: true))
+                
+                AnswerRow(answer: Answer(text: "true", isAnswerCorrect: false))
             }
+            
+            MainButton(text: "Próximo")
+            
+            //Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
