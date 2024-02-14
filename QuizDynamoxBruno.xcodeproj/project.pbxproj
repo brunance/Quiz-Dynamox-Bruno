@@ -11,6 +11,7 @@
 		4F1BD6072B7D2D8100E67413 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BD6062B7D2D8100E67413 /* ContentView.swift */; };
 		4F1BD6092B7D2D8200E67413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1BD6082B7D2D8200E67413 /* Assets.xcassets */; };
 		4F1BD60D2B7D2D8200E67413 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1BD60C2B7D2D8200E67413 /* Preview Assets.xcassets */; };
+		4F1BD61B2B7D538300E67413 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BD61A2B7D538300E67413 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		4F1BD6082B7D2D8200E67413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1BD60A2B7D2D8200E67413 /* QuizDynamoxBruno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuizDynamoxBruno.entitlements; sourceTree = "<group>"; };
 		4F1BD60C2B7D2D8200E67413 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F1BD61A2B7D538300E67413 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				4F1BD6042B7D2D8100E67413 /* QuizDynamoxBrunoApp.swift */,
-				4F1BD6062B7D2D8100E67413 /* ContentView.swift */,
+				4F1BD6192B7D535200E67413 /* Components */,
+				4F1BD6182B7D534C00E67413 /* Views */,
 				4F1BD6082B7D2D8200E67413 /* Assets.xcassets */,
 				4F1BD60A2B7D2D8200E67413 /* QuizDynamoxBruno.entitlements */,
 				4F1BD60B2B7D2D8200E67413 /* Preview Content */,
@@ -67,6 +70,22 @@
 				4F1BD60C2B7D2D8200E67413 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4F1BD6182B7D534C00E67413 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F1BD6062B7D2D8100E67413 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F1BD6192B7D535200E67413 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4F1BD61A2B7D538300E67413 /* MainButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 			files = (
 				4F1BD6072B7D2D8100E67413 /* ContentView.swift in Sources */,
 				4F1BD6052B7D2D8100E67413 /* QuizDynamoxBrunoApp.swift in Sources */,
+				4F1BD61B2B7D538300E67413 /* MainButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +290,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuizDynamoxBruno/Preview Content\"";
+				DEVELOPMENT_TEAM = YP9Q3ST2DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -306,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuizDynamoxBruno/Preview Content\"";
+				DEVELOPMENT_TEAM = YP9Q3ST2DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
