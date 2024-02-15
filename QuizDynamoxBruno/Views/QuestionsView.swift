@@ -38,7 +38,8 @@ struct QuestionsView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.gray))
+        .background(Color(hex: "#8AB5E9"))
+        .toolbar(.hidden)
     }
 }
 

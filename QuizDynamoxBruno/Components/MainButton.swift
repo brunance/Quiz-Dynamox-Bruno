@@ -13,12 +13,12 @@ struct MainButton: View {
     
     var body: some View {
         Text(text)
-            .foregroundStyle(.white)
+            .foregroundStyle(.black)
             .padding()
             .padding(.horizontal)
             .background(background)
             .cornerRadius(30)
-            //.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
     }
 }
 

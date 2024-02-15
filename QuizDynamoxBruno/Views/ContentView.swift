@@ -9,22 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 40){
-            VStack(spacing: 20){
-                Text("Testando QUiz Aquui")
-                    .accentColorTitle()
+        NavigationView {
+            VStack(spacing: 40){
+                VStack(spacing: 20){
+                    Text("Esse é o quiz do louco")
+                        .accentColorTitle()
+                    
+                    Text("Insira seu nome abaixo para começar!")
+                    
+                //Inserir caixa de texto para username
+                }
+                NavigationLink {
+                    QuizView()
+                } label : {
+                    MainButton(text: "Começar aqui")
+                }
                 
-                Text("Insira seu nome abaixo para começar")
+                Text("inserir ranking aqui embaixo")
                 
-            //Inserir caixa de texto para username
+                
             }
-            
-            MainButton(text: "Começar aqui")
-            
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+            .ignoresSafeArea(.all)
+        .background(Color(hex: "#8AB5E9"))
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-        .ignoresSafeArea(.all)
-        .background(Color(.gray))
     }
 }
 

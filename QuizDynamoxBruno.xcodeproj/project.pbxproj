@@ -17,6 +17,7 @@
 		4F1BD6212B7D5FBF00E67413 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BD6202B7D5FBF00E67413 /* ProgressBar.swift */; };
 		4F1BD6242B7D817C00E67413 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BD6232B7D817C00E67413 /* Answer.swift */; };
 		4F1BD6262B7D821100E67413 /* AnswerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1BD6252B7D821100E67413 /* AnswerRow.swift */; };
+		4F1CA07B2B7E678700CC43F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1CA07A2B7E678700CC43F2 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4F1BD6202B7D5FBF00E67413 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		4F1BD6232B7D817C00E67413 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		4F1BD6252B7D821100E67413 /* AnswerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRow.swift; sourceTree = "<group>"; };
+		4F1CA07A2B7E678700CC43F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,8 @@
 		4F1BD6032B7D2D8100E67413 /* QuizDynamoxBruno */ = {
 			isa = PBXGroup;
 			children = (
-				4F1BD6222B7D816B00E67413 /* Model */,
 				4F1BD6042B7D2D8100E67413 /* QuizDynamoxBrunoApp.swift */,
+				4F1BD6222B7D816B00E67413 /* Model */,
 				4F1BD6192B7D535200E67413 /* Components */,
 				4F1BD6182B7D534C00E67413 /* Views */,
 				4F1BD61C2B7D598A00E67413 /* Extensions.swift */,
@@ -89,6 +91,7 @@
 			children = (
 				4F1BD6062B7D2D8100E67413 /* ContentView.swift */,
 				4F1BD61E2B7D5DC300E67413 /* QuestionsView.swift */,
+				4F1CA07A2B7E678700CC43F2 /* QuizView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				4F1BD6072B7D2D8100E67413 /* ContentView.swift in Sources */,
 				4F1BD6052B7D2D8100E67413 /* QuizDynamoxBrunoApp.swift in Sources */,
+				4F1CA07B2B7E678700CC43F2 /* QuizView.swift in Sources */,
 				4F1BD6262B7D821100E67413 /* AnswerRow.swift in Sources */,
 				4F1BD61B2B7D538300E67413 /* MainButton.swift in Sources */,
 				4F1BD6242B7D817C00E67413 /* Answer.swift in Sources */,
