@@ -15,7 +15,7 @@ struct QuizQuestionView: View {
             if viewModel.currentQuestionIndex < viewModel.questions.count {
                 let question = viewModel.questions[viewModel.currentQuestionIndex]
                 QuestionView(question: question, onNextQuestion: viewModel.nextQuestion)
-            } else {
+            } else if viewModel.currentQuestionIndex == 10 {
                 ResultView(score: viewModel.score, restartQuiz: viewModel.restartQuiz)
             }
         }
