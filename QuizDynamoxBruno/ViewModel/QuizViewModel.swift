@@ -49,5 +49,9 @@ class QuizViewModel: ObservableObject {
         currentQuestionIndex = 0
         score = 0
     }
+    
+    func hideKeyboard() {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
 }
 
