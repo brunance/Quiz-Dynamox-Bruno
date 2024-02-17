@@ -14,7 +14,8 @@ struct QuizQuestionView: View {
         VStack {
             if viewModel.currentQuestionIndex < viewModel.questions.count {
                 let question = viewModel.questions[viewModel.currentQuestionIndex]
-                QuestionView(question: question, onNextQuestion: viewModel.nextQuestion)
+                QuestionView(questionNumber: viewModel.currentQuestionIndex + 1, totalQuestions: viewModel.questions.count, question: question, onNextQuestion: viewModel.nextQuestion)
+
             } else if viewModel.currentQuestionIndex == 10 {
                 ResultView(score: viewModel.score, restartQuiz: viewModel.restartQuiz)
             }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuestionView: View {
+    let questionNumber: Int
+    let totalQuestions: Int
     let question: Question
     let onNextQuestion: (Bool) -> Void
     @State private var selectedAnswer: String = ""
@@ -15,9 +17,23 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Text("Quiz aqui")
+                Spacer()
+                Text("Questão \(questionNumber) de \(totalQuestions)")
+            }
+            
             Text(question.statement)
                 .padding()
+            
+            if let answerStatusMessage = answerStatusMessage {
+                Text(answerStatusMessage)
+                    .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
+                    .padding()
+            }
+            
             Spacer()
+            
             VStack(alignment: .leading) {
                 ForEach(question.options, id: \.self) { option in
                     Button(action: {
@@ -28,11 +44,6 @@ struct QuestionView: View {
                             .padding()
                     }
                 }
-            }
-            if let answerStatusMessage = answerStatusMessage {
-                Text(answerStatusMessage)
-                    .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
-                    .padding()
             }
         }
         .onAppear {
@@ -46,7 +57,7 @@ struct QuestionView: View {
             case .success(let isCorrect):
                 DispatchQueue.main.async {
                     answerStatusMessage = isCorrect ? "Resposta correta!" : "Resposta incorreta!"
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         onNextQuestion(isCorrect)
                     }
                 }
