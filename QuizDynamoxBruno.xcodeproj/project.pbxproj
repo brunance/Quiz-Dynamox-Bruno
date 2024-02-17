@@ -71,10 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				4F1BD6042B7D2D8100E67413 /* QuizDynamoxBrunoApp.swift */,
-				4F1CA08A2B8048D100CC43F2 /* ViewModel */,
-				4F1BD6222B7D816B00E67413 /* Model */,
 				4F1BD6192B7D535200E67413 /* Components */,
-				4F1BD6182B7D534C00E67413 /* Views */,
+				4F1BD6222B7D816B00E67413 /* Model */,
+				4F1CA08A2B8048D100CC43F2 /* ViewModel */,
+				4F1BD6182B7D534C00E67413 /* View */,
 				4F1BD61C2B7D598A00E67413 /* Extensions.swift */,
 				4F1BD6082B7D2D8200E67413 /* Assets.xcassets */,
 				4F1BD60A2B7D2D8200E67413 /* QuizDynamoxBruno.entitlements */,
@@ -91,7 +91,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		4F1BD6182B7D534C00E67413 /* Views */ = {
+		4F1BD6182B7D534C00E67413 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4F1BD6062B7D2D8100E67413 /* ContentView.swift */,
@@ -99,7 +99,7 @@
 				4F1CA0882B80315800CC43F2 /* QuizQuestionView.swift */,
 				4F1CA08D2B80498000CC43F2 /* QuestionView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4F1BD6192B7D535200E67413 /* Components */ = {
