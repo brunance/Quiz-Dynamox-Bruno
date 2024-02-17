@@ -17,6 +17,9 @@ struct ContentView: View {
                 QuizQuestionView(viewModel: viewModel)
             } else {
                 VStack {
+                    Image("DynaLogo")
+                        .padding(.bottom, 20)
+                    
                     Text("DynaQuiz")
                         .brownColorTitle()
                         .padding(.bottom, 20)
