@@ -17,8 +17,18 @@ struct ContentView: View {
                 QuizQuestionView(viewModel: viewModel)
             } else {
                 VStack {
-                    TextField("Nome ou Apelido", text: $viewModel.playerName)
-                        .padding()
+                    Text("DynaQuiz")
+                        .brownColorTitle()
+                        .padding(.bottom, 20)
+                    
+                    Text("Teste seus conhecimentos e tente acertar o máximo que conseguir!")
+                        .foregroundStyle(Color("AccentColor"))
+                        .multilineTextAlignment(.center)
+                    
+                    TextField("Insira seu nome...", text: $viewModel.playerName)
+                        .underlineTextField()
+                        .padding(20)
+                    
                     Button("Iniciar Quiz") {
                         if !viewModel.playerName.isEmpty {
                             viewModel.startQuiz()
@@ -26,16 +36,20 @@ struct ContentView: View {
                             isAlertPresented = true
                         }
                     }
+                    .foregroundStyle(.white)
+                    .padding()
+                    .padding(.horizontal)
+                    .background(Color("AccentColor"))
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    
                 }
                 .alert(isPresented: $isAlertPresented) {
                     Alert(title: Text("Nome Inválido"), message: Text("Por favor, insira um nome ou apelido."), dismissButton: .default(Text("OK")))
                 }
             }
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
+        .background(Color(hex: "F6FBBF"))
     }
 }
-
-//#Preview {
-//    ContentView()
-//}

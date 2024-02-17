@@ -9,11 +9,21 @@ import Foundation
 import SwiftUI
 
 extension Text {
-    func accentColorTitle() -> some View {
+    func brownColorTitle() -> some View {
         self
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             .fontWeight(.heavy)
             .foregroundStyle(Color("AccentColor"))
+    }
+}
+
+extension View {
+    func underlineTextField() -> some View {
+        self
+            .padding(.vertical, 10)
+            .overlay(Rectangle().frame(height: 2).padding(.top, 35))
+            .foregroundColor(Color("AccentColor"))
+            .padding(10)
     }
 }
 

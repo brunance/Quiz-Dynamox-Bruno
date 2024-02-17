@@ -16,44 +16,64 @@ struct QuestionView: View {
     @State private var answerStatusMessage: String?
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Quiz aqui")
-                Spacer()
-                Text("Questão \(questionNumber) de \(totalQuestions)")
-            }
-            
-            Text(question.statement)
-                .padding()
-            
-            if let answerStatusMessage = answerStatusMessage {
-                Text(answerStatusMessage)
-                    .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
-                    .padding()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                            self.answerStatusMessage = nil
-                            onNextQuestion(answerStatusMessage.contains("Resposta correta!"))
-                        }
-                    }
-            }
-            
-            Spacer()
-            
-            VStack(alignment: .leading) {
+        ZStack {
+            VStack {
+                HStack {
+                    Text("DynaQuiz")
+                        .brownColorTitle()
+                        .padding(.leading, 20)
+                    Spacer()
+                    Text("Questão \(questionNumber) de \(totalQuestions)")
+                        .foregroundStyle(Color("AccentColor"))
+                        .fontWeight(.heavy)
+                        .padding(.trailing, 20)
+                }
+                
+                Text(question.statement)
+                    .foregroundStyle(.white)
+                    .padding(20)
+                    .background(Color("AccentColor"))
+                
+                
                 ScrollView {
-                    ForEach(question.options, id: \.self) { option in
-                        Button(action: {
-                            selectedAnswer = option
-                            postAnswer()
-                        }) {
-                            Text(option)
-                                .padding()
+                    VStack {
+                        ForEach(question.options, id: \.self) { option in
+                            Button(action: {
+                                selectedAnswer = option
+                                postAnswer()
+                            }) {
+                                Text(option)
+                                    .padding()
+                                    .border(Color("AccentColor"))
+                            }
                         }
                     }
                 }
+                .padding(.top, 20)
+                .frame(width: 300, height: 300)
             }
+            
+            VStack {
+                if let answerStatusMessage = answerStatusMessage {
+                    Text(answerStatusMessage)
+                        .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.answerStatusMessage = nil
+                                onNextQuestion(answerStatusMessage.contains("Resposta correta!"))
+                            }
+                        }
+                        .padding()
+                        .padding(.horizontal)
+                        .background(.white)
+                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        .fontWeight(.heavy)
+                }
+            }
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom, 50)
         }
+        
     }
     
     func postAnswer() {
