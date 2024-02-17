@@ -30,6 +30,12 @@ struct QuestionView: View {
                 Text(answerStatusMessage)
                     .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
                     .padding()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            self.answerStatusMessage = nil
+                            onNextQuestion(answerStatusMessage.contains("Resposta correta!"))
+                        }
+                    }
             }
             
             Spacer()
@@ -46,9 +52,9 @@ struct QuestionView: View {
                 }
             }
         }
-        .onAppear {
-            answerStatusMessage = nil
-        }
+        //        .onAppear {
+        //            answerStatusMessage = nil
+        //        }
     }
     
     func postAnswer() {
@@ -57,13 +63,12 @@ struct QuestionView: View {
             case .success(let isCorrect):
                 DispatchQueue.main.async {
                     answerStatusMessage = isCorrect ? "Resposta correta!" : "Resposta incorreta!"
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        onNextQuestion(isCorrect)
-                    }
                 }
             case .failure(let error):
                 print("Error posting answer: \(error.localizedDescription)")
-                answerStatusMessage = "Erro ao verificar a resposta."
+                DispatchQueue.main.async {
+                    answerStatusMessage = "Erro ao verificar a resposta."
+                }
             }
         }
     }
