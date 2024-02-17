@@ -14,6 +14,7 @@ struct QuestionView: View {
     let onNextQuestion: (Bool) -> Void
     @State private var selectedAnswer: String = ""
     @State private var answerStatusMessage: String?
+    @State private var isAnswered = false
     
     var body: some View {
         ZStack {
@@ -22,7 +23,9 @@ struct QuestionView: View {
                     Text("DynaQuiz")
                         .brownColorTitle()
                         .padding(.leading, 20)
+                    
                     Spacer()
+                    
                     Text("Questão \(questionNumber) de \(totalQuestions)")
                         .foregroundStyle(Color("AccentColor"))
                         .fontWeight(.heavy)
@@ -39,13 +42,17 @@ struct QuestionView: View {
                     VStack {
                         ForEach(question.options, id: \.self) { option in
                             Button(action: {
-                                selectedAnswer = option
-                                postAnswer()
+                                if !isAnswered {
+                                    selectedAnswer = option
+                                    isAnswered = true
+                                    postAnswer()
+                                }
                             }) {
                                 Text(option)
                                     .padding()
                                     .border(Color("AccentColor"))
                             }
+                            .disabled(isAnswered)
                         }
                     }
                 }
@@ -61,6 +68,7 @@ struct QuestionView: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 self.answerStatusMessage = nil
                                 onNextQuestion(answerStatusMessage.contains("Resposta correta!"))
+                                self.isAnswered = false
                             }
                         }
                         .padding()

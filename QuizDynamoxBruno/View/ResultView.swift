@@ -16,10 +16,12 @@ struct ResultView: View {
             Text("Parabéns!")
                 .brownColorTitle()
                 .padding(.bottom, 20)
+            
             Text("Sua pontuação foi: \(score)/10")
                 .foregroundStyle(Color("AccentColor"))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20)
+            
             Button("Reiniciar Quiz") {
                 restartQuiz()
             }
