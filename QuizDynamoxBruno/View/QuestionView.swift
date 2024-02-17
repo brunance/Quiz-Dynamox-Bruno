@@ -41,20 +41,19 @@ struct QuestionView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                ForEach(question.options, id: \.self) { option in
-                    Button(action: {
-                        selectedAnswer = option
-                        postAnswer()
-                    }) {
-                        Text(option)
-                            .padding()
+                ScrollView {
+                    ForEach(question.options, id: \.self) { option in
+                        Button(action: {
+                            selectedAnswer = option
+                            postAnswer()
+                        }) {
+                            Text(option)
+                                .padding()
+                        }
                     }
                 }
             }
         }
-        //        .onAppear {
-        //            answerStatusMessage = nil
-        //        }
     }
     
     func postAnswer() {

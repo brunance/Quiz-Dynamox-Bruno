@@ -76,6 +76,7 @@
 				4F1CA08A2B8048D100CC43F2 /* ViewModel */,
 				4F1BD6182B7D534C00E67413 /* View */,
 				4F1BD61C2B7D598A00E67413 /* Extensions.swift */,
+				4F1CA0842B80200200CC43F2 /* APIManager.swift */,
 				4F1BD6082B7D2D8200E67413 /* Assets.xcassets */,
 				4F1BD60A2B7D2D8200E67413 /* QuizDynamoxBruno.entitlements */,
 				4F1BD60B2B7D2D8200E67413 /* Preview Content */,
@@ -115,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				4F1CA0822B801AA500CC43F2 /* Question.swift */,
-				4F1CA0842B80200200CC43F2 /* APIManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

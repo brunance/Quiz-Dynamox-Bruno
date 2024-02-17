@@ -22,8 +22,3 @@ struct QuizQuestionView: View {
         }
     }
 }
-
-
-//#Preview {
-//    QuizQuestionView()
-//}
