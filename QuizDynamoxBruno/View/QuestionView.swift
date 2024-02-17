@@ -11,6 +11,7 @@ struct QuestionView: View {
     let question: Question
     let onNextQuestion: (Bool) -> Void
     @State private var selectedAnswer: String = ""
+    @State private var answerStatusMessage: String?
     
     var body: some View {
         VStack {
@@ -28,6 +29,14 @@ struct QuestionView: View {
                     }
                 }
             }
+            if let answerStatusMessage = answerStatusMessage {
+                Text(answerStatusMessage)
+                    .foregroundColor(answerStatusMessage.contains("Resposta correta!") ? .green : .red)
+                    .padding()
+            }
+        }
+        .onAppear {
+            answerStatusMessage = nil
         }
     }
     
@@ -36,10 +45,14 @@ struct QuestionView: View {
             switch result {
             case .success(let isCorrect):
                 DispatchQueue.main.async {
-                    onNextQuestion(isCorrect)
+                    answerStatusMessage = isCorrect ? "Resposta correta!" : "Resposta incorreta!"
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        onNextQuestion(isCorrect)
+                    }
                 }
             case .failure(let error):
                 print("Error posting answer: \(error.localizedDescription)")
+                answerStatusMessage = "Erro ao verificar a resposta."
             }
         }
     }
