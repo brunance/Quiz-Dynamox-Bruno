@@ -57,7 +57,7 @@ struct QuestionView: View {
                     }
                 }
                 .padding(.top, 20)
-                .frame(width: 300, height: 300)
+                .frame(width: 300, height: 400)
             }
             
             VStack {
